@@ -1,0 +1,41 @@
+{
+    "fileName": "id_1682896763174_0_propertyChange",
+    "fileType": "change",
+    "changeType": "propertyChange",
+    "moduleName": "",
+    "reference": "project2",
+    "packageName": "",
+    "content": {
+        "property": "fitContent",
+        "newValue": true
+    },
+    "selector": {
+        "id": "project2::sap.suite.ui.generic.template.ListReport.view.ListReport::VisitCollection--page",
+        "idIsLocal": false,
+        "type": "sap.f.DynamicPage"
+    },
+    "layer": "CUSTOMER_BASE",
+    "texts": {},
+    "namespace": "apps/project2/changes/",
+    "projectId": "",
+    "creation": 1682896763174,
+    "originalLanguage": "",
+    "support": {
+        "generator": "changeUtils: SAPFioriTools",
+        "service": "",
+        "user": "",
+        "sapui5Version": "1.113.0",
+        "sourceChangeFileName": "",
+        "compositeCommand": ""
+    },
+    "oDataInformation": {},
+    "dependentSelector": {},
+    "validAppVersions": {
+        "from": "0.0.1",
+        "to": "0.0.1",
+        "creation": "0.0.1"
+    },
+    "jsOnly": false,
+    "variantReference": "",
+    "appDescriptorChange": false
+}

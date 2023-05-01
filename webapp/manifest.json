@@ -1,14 +1,14 @@
 {
     "_version": "1.49.0",
     "sap.app": {
-        "id": "project1",
+        "id": "project2",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
             "version": "0.0.1"
         },
-        "title": "{{appTitle}}",
-        "description": "{{appDescription}}",
+        "title": "Visits",
+        "description": "Visit Management",
         "resources": "resources.json",
         "sourceTemplate": {
             "id": "@sap/generator-fiori:lrop",
@@ -20,11 +20,11 @@
                 "uri": "/sap/c4c/odata/v1/c4codataapi/",
                 "type": "OData",
                 "settings": {
+                    "odataVersion": "2.0",
                     "annotations": [
                         "annotation"
                     ],
-                    "localUri": "localService/metadata.xml",
-                    "odataVersion": "2.0"
+                    "localUri": "localService/metadata.xml"
                 }
             },
             "annotation": {
@@ -83,10 +83,7 @@
                 "settings": {
                     "defaultBindingMode": "TwoWay",
                     "defaultCountMode": "Inline",
-                    "refreshAfterChange": false,
-                    "metadataUrlParams": {
-                        "sap-value-list": "none"
-                    }
+                    "refreshAfterChange": false
                 }
             },
             "@i18n": {
@@ -101,6 +98,30 @@
             "config": {},
             "routes": [],
             "targets": {}
+        },
+        "extends": {
+            "extensions": {
+                "sap.ui.controllerExtensions": {
+                    "sap.suite.ui.generic.template.ObjectPage.view.Details": {
+                        "controllerName": "project1.ext.controller.ObjectPageExt",
+                        "sap.ui.generic.app": {
+                            "VisitCollection": {
+                                "EntitySet": "VisitCollection",
+                                "Header": {
+                                    "Actions": {
+                                        "action1": {
+                                            "id": "action1Button",
+                                            "text": "Custom Action 1",
+                                            "press": "Custom Action 1",
+                                            "requiresSelection": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "sap.ui.generic.app": {
@@ -109,7 +130,11 @@
             "forceGlobalRefresh": false,
             "objectPageHeaderType": "Dynamic",
             "considerAnalyticalParameters": true,
-            "showDraftToggle": false
+            "showDraftToggle": false,
+            "flexibleColumnLayout": {
+                "defaultTwoColumnLayoutType": "TwoColumnsBeginExpanded",
+                "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+            }
         },
         "pages": {
             "ListReport|VisitCollection": {
@@ -125,7 +150,15 @@
                             "dateSettings": {
                                 "useDateRange": true
                             }
-                        }
+                        },
+                        "tableSettings": {
+                            "multiSelect": true,
+                            "type": "ResponsiveTable"
+                        },
+                        "dataLoadSettings": {
+                            "loadDataOnAppLaunch": "always"
+                        },
+                        "variantManagementHidden": true
                     }
                 },
                 "pages": {
