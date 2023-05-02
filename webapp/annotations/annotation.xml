@@ -221,6 +221,11 @@
                             <PropertyValue Property="Label" String="Notes" />
                             <PropertyValue Property="ID" String="VisitCollection" />
                         </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="VisitAttachment/@UI.LineItem" />
+                            <PropertyValue Property="Label" String="Attachments" />
+                            <PropertyValue Property="ID" String="Visitattach" />
+                        </Record>
                     </Collection>
                 </Annotation>
             </Annotations>
@@ -320,25 +325,188 @@
                             <PropertyValue Property="Value" Path="Text" />
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Author" />
                             <PropertyValue Property="Value" Path="AuthorName" />
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Created By" />
                             <PropertyValue Property="Value" Path="CreatedBy" />
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Created On" />
                             <PropertyValue Property="Value" Path="CreatedOn" />
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Type Code" />
                             <PropertyValue Property="Value" Path="TypeCode" />
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Langauge" />
                             <PropertyValue Property="Value" Path="LanguageCode" />
                         </Record>
                     </Collection>
                 </Annotation>
+
+                <Annotation Term="UI.DataPoint" Qualifier="PartyName">
+                    <Record Type="UI.DataPointType">
+                        <PropertyValue Property="Title" String="Created By" />
+                        <PropertyValue Property="Value" Path="CreatedBy" />
+                        <PropertyValue Property="Criticality" EnumMember="UI.CriticalityType/Critical" />
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#Texts" />
+                            <PropertyValue Property="Label" String="Selected text" />
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="Texts">
+                    <Record>
+                        <PropertyValue Property="Label" String="Party Details" />
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Text" />
+                                    <PropertyValue Property="Value" Path="Text" />
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Author" />
+                                    <PropertyValue Property="Value" Path="AuthorName" />
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Created By" />
+                                    <PropertyValue Property="Value" Path="CreatedBy" />
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Created On" />
+                                    <PropertyValue Property="Value" Path="CreatedOn" />
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Type Code" />
+                                    <PropertyValue Property="Value" Path="TypeCode" />
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Langauge" />
+                                    <PropertyValue Property="Value" Path="LanguageCode" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
             </Annotations>
             <Annotations Target="c4codata.VisitAttachment" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Type Code" />
+                            <PropertyValue Property="Value" Path="TypeCode" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Document Type" />
+                            <PropertyValue Property="Value" Path="MimeType" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Document Link" />
+                            <PropertyValue Property="Value" Path="DocumentLink" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                        <PropertyValue Property="Label" String="Name" />
+                            <PropertyValue Property="Value" Path="Name" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                        <PropertyValue Property="Label" String="Category" />
+                            <PropertyValue Property="Value" Path="CategoryCode" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Web Link" />
+                            <PropertyValue Property="Value" Path="LinkWebURI" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Created On" />
+                            <PropertyValue Property="Value" Path="CreatedOn" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                        <PropertyValue Property="Label" String="Last Updated On" />
+                            <PropertyValue Property="Value" Path="LastUpdatedOn" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                        <PropertyValue Property="Label" String="Created By" />
+                            <PropertyValue Property="Value" Path="CreatedBy" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                        <PropertyValue Property="Label" String="Last Updated By" />
+                            <PropertyValue Property="Value" Path="LastUpdatedBy" />
+                        </Record>
+                    </Collection>
+                </Annotation>
+
+                  <Annotation Term="UI.DataPoint" Qualifier="PartyName">
+                    <Record Type="UI.DataPointType">
+                        <PropertyValue Property="Title" String="Name" />
+                        <PropertyValue Property="Value" Path="Name" />
+                        <PropertyValue Property="Criticality" EnumMember="UI.CriticalityType/Critical" />
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#Docs" />
+                            <PropertyValue Property="Label" String="Selected text" />
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="Docs">
+                    <Record>
+                        <PropertyValue Property="Label" String="Text" />
+                        <PropertyValue Property="Data">
+   <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Type Code" />
+                            <PropertyValue Property="Value" Path="TypeCode" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Document Type" />
+                            <PropertyValue Property="Value" Path="MimeType" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Document Link" />
+                            <PropertyValue Property="Value" Path="DocumentLink" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                        <PropertyValue Property="Label" String="Name" />
+                            <PropertyValue Property="Value" Path="Name" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                        <PropertyValue Property="Label" String="Category" />
+                            <PropertyValue Property="Value" Path="CategoryCode" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Web Link" />
+                            <PropertyValue Property="Value" Path="LinkWebURI" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Created On" />
+                            <PropertyValue Property="Value" Path="CreatedOn" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                        <PropertyValue Property="Label" String="Last Updated On" />
+                            <PropertyValue Property="Value" Path="LastUpdatedOn" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                        <PropertyValue Property="Label" String="Created By" />
+                            <PropertyValue Property="Value" Path="CreatedBy" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                        <PropertyValue Property="Label" String="Last Updated By" />
+                            <PropertyValue Property="Value" Path="LastUpdatedBy" />
+                        </Record>
+                    </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
                     <Collection>
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Label" String="Text" />

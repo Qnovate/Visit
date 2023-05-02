@@ -176,6 +176,20 @@
                                 "component": {
                                     "name": "sap.suite.ui.generic.template.ObjectPage"
                                 }
+                            },
+                            "ObjectPage|VisitAttachmentCollection": {
+                                "component": {
+                                    "name": "sap.suite.ui.generic.template.ObjectPage"
+                                },
+                                "entitySet": "VisitAttachmentCollection",
+                                "navigationProperty": "VisitAttachment"
+                            },
+                            "ObjectPage|VisitTextCollectionCollection": {
+                                "component": {
+                                    "name": "sap.suite.ui.generic.template.ObjectPage"
+                                },
+                                "entitySet": "VisitTextCollectionCollection",
+                                "navigationProperty": "VisitTextCollection"
                             }
                         }
                     }
@@ -189,6 +203,6 @@
     },
     "sap.cloud": {
         "public": true,
-        "service": "project1"
+        "service": "project2"
     }
 }
